@@ -1,0 +1,75 @@
+{% include 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bill Summary</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f3e7; /* Soft orange-white background */
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      .invoice-container {
+        width: 60%;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: black; /* Black color for title */
+        text-shadow: 0 0 5px #99f9fe, 0 0 10px #99f9fe, 0 0 20px #99f9fe;
+        margin-bottom: 20px;
+      }
+      h3 {
+        color: #ff6600; /* Orange color for subtitles */
+        margin: 10px 0;
+      }
+      .item {
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        margin: 15px 0;
+      }
+      .item b {
+        font-family: "serif";
+        color: #333;
+      }
+      .total {
+        font-size: 22px;
+        color: #ff6600;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="invoice-container">
+      <h1>Bill Summary</h1>
+      <h3>INVOICE</h3>
+
+      {% for x in col %}
+      <div class="item">
+        <b>Patient ID</b>
+        <span>#{{ x.Patient_ID }}</span>
+      </div>
+      <div class="item">
+        <b>Room Charges</b>
+        <span>${{ x.RoomCharges }}</span>
+      </div>
+      <div class="item">
+        <b>Reports Charges</b>
+        <span>${{ x.Reports_Charges }}</span>
+      </div>
+      <div class="item">
+        <b>Medicines Fee</b>
+        <span>${{ x.Medicines_fee }}</span>
+      </div>
+      <h3 class="total">Total ($): {{ x.Total_Due }}</h3>
+      {% endfor %}
+    </div>
+  </body>
+</html>

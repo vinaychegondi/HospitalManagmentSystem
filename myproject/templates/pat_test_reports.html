@@ -1,0 +1,74 @@
+{% include 'base.html' %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Patients Test Report Details</title>
+    <style>
+      body {
+        background-color: #f9f3e7;
+        color: #333;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        color: black; /* Black color for titles */
+
+        margin-top: 20px;
+      }
+      table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        background-color: #ffffff;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      th,
+      td {
+        border: 1px solid #e0e0e0;
+        padding: 10px 15px;
+        text-align: center;
+      }
+      th {
+        background-color: #ff6600;
+        color: #ffffff;
+        font-weight: bold;
+      }
+      tr:nth-child(even) {
+        background-color: #fbe4d5;
+      }
+      tr:hover {
+        background-color: #ffe4b5;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Patients Test Report Details</h1>
+
+    <table>
+      <tr>
+        <th>PatientID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Gender</th>
+        <th>Assigned Doctor ID</th>
+        <th>Report Type</th>
+        <th>Report Description</th>
+        <th>Cost</th>
+      </tr>
+      {% for x in tup %}
+      <tr>
+        <td>{{ x.PatientID }}</td>
+        <td>{{ x.First_Name }}</td>
+        <td>{{ x.Last_Name }}</td>
+        <td>{{ x.gender }}</td>
+        <td>{{ x.Assigned_DocterID }}</td>
+        <td>{{ x.Report_Type }}</td>
+        <td>{{ x.Report_description }}</td>
+        <td>{{ x.Cost }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

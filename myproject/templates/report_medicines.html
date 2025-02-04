@@ -1,0 +1,54 @@
+{% include 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Report Form and Medicines Form</title>
+    <style>
+      body {
+        background-color: #f9f3e7; /* Soft orange-white background */
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        color: black; /* Black color for title */
+        margin: 40px 0;
+      }
+      .button {
+        display: inline-block;
+        background-color: #f1f1f1;
+        color: black;
+        font-size: 16px;
+        padding: 14px 25px;
+        border-radius: 4px;
+        margin: 20px;
+        text-decoration: none;
+        cursor: pointer;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .button:hover {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Click on the Button to Add</h1>
+
+    <button class="button" onclick="abc()">Add Report</button>
+    <button class="button" onclick="cba()">Add Medicines</button>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      function abc() {
+        location.href = "/report_form/";
+      }
+
+      function cba() {
+        location.href = "/prescription/";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OSU Hospitals - Hospital Management System</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        background-color: #fefefe;
+        color: #333;
+      }
+      .container {
+        width: 90%;
+        margin: auto;
+        padding: 20px;
+      }
+      .section-title {
+        font-size: 28px;
+        margin-top: 40px;
+        color: #ff6600;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .about-section,
+      .services-section,
+      .contact-section {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #fff5e6;
+        border-radius: 8px;
+        border: 1px solid #ff6600;
+      }
+      .about-text,
+      .services-text,
+      .contact-text {
+        padding: 20px;
+        color: #333;
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #ff6600;
+        color: white;
+        margin-top: 40px;
+      }
+      footer p {
+        margin: 0;
+        font-size: 14px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!-- Unified Navigation Bar -->
+    <header>
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" style="color: #ff6600"
+              >OSU Hospitals - HMS</a
+            >
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="http://127.0.0.1:8000/home/">Home</a></li>
+            <li><a href="/Pat_test">Patients Test Details</a></li>
+            <li>
+              <a href="/Pat_Prescription">Patients Prescription Details</a>
+            </li>
+            <li><a href="/room_allocation">Room Allocation</a></li>
+            <li><a href="/generate_bill">Generate Bill</a></li>
+            <li><a href="/doctor/">Doctor Details</a></li>
+            <li><a href="/patient/">Patient Signup</a></li>
+            <li><a href="/assigned/">Assigned Patients</a></li>
+            <li><a href="/services/">Our Services</a></li>
+            <li><a href="/contact/">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    
+      <!-- Services Section -->
+      <div class="services-section">
+        <div class="services-text">
+          <h2 class="section-title">Our Services</h2>
+          <ul>
+            <li>
+              <strong>Emergency Care:</strong> Around-the-clock emergency
+              services for critical situations.
+            </li>
+            <li>
+              <strong>Surgical Services:</strong> Comprehensive surgical care,
+              from routine to complex surgeries.
+            </li>
+            <li>
+              <strong>Outpatient Services:</strong> Convenient services for
+              routine checkups and specialty consultations.
+            </li>
+            <li>
+              <strong>Maternity Care:</strong> Specialized maternity services
+              with neonatal care support.
+            </li>
+            <li>
+              <strong>Diagnostic Imaging:</strong> Advanced imaging technology
+              including MRI, CT, and X-ray.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    <footer>
+      <p>&copy; 2024 OSU Hospital. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

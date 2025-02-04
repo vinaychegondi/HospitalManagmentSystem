@@ -1,0 +1,21 @@
+{% include 'base.html' %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Medicines</title>
+  </head>
+  <body>
+    {% block content %} {{msg}}
+    <form method="POST">
+      {% csrf_token %} patient_id :<input
+        type="number"
+        name="Patient_ID"
+      /><br />
+      report_type :<input type="text" name="Last_Name" /><br />
+      total_cost :<input type="number" name="TotalCost" /><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+    {% endblock %}
+  </body>
+</html>

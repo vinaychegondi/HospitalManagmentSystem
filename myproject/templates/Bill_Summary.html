@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bill Summary</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 60%;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+      }
+      th {
+        background-color: #f4f4f4;
+      }
+      .total {
+        font-weight: bold;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Bill Summary</h1>
+
+      {% if bill_summary %} {% for bill in bill_summary %}
+      <table>
+        <tr>
+          <th>Patient ID</th>
+          <td>{{ bill.Patient_ID }}</td>
+        </tr>
+        <tr>
+          <th>Total Room Charges</th>
+          <td>${{ bill.Total_Room_Charges }}</td>
+        </tr>
+        <tr>
+          <th>Total Report Charges</th>
+          <td>${{ bill.Total_Report_Charges }}</td>
+        </tr>
+        <tr>
+          <th>Total Medicines Fee</th>
+          <td>${{ bill.Total_Medicine_Fee }}</td>
+        </tr>
+        <tr>
+          <th class="total">Total Due Amount</th>
+          <td class="total">${{ bill.Total_Due_Amount }}</td>
+        </tr>
+      </table>
+      {% endfor %} {% else %}
+      <p>No billing information available for this patient.</p>
+      {% endif %}
+
+      <div style="text-align: center; margin-top: 20px">
+        <a
+          href="/home/"
+          style="text-decoration: none; color: #333; font-weight: bold"
+          >Back to Home</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

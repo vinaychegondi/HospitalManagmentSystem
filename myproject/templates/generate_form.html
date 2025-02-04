@@ -1,0 +1,92 @@
+{% include 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Generate Bill For Patient</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f3e7; /* Soft orange-white background */
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      .form {
+        width: 50%;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: black; /* Black color for titles */
+      }
+      input[type="number"] {
+        padding: 10px;
+        width: 80%;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #ff6600;
+        color: #ffffff;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+      }
+      input[type="submit"]:hover {
+        background-color: #e55b00;
+      }
+      .button {
+        padding: 10px 20px;
+        background-color: #ff6600;
+        color: #ffffff;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 20px;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+      }
+      .button:hover {
+        color: rgba(250, 97, 105, 0.8);
+        background-color: #e55b00;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <form method="POST">
+        {% csrf_token %}
+
+        <h1>Generate Bill For Patient</h1>
+        <input
+          type="number"
+          placeholder="Enter Patient ID"
+          name="PatientID"
+        /><br /><br />
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <h1>Looking for the bill summary of the patient?</h1>
+
+    <button onclick="see_bill()" class="button">See Bill</button>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      function see_bill() {
+        location.href = "/see_bill/";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OSU Hospitals - Hospital Management System</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <style>
+      /* General Styling */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        background-color: #fefefe;
+        color: #333;
+      }
+
+      .container {
+        width: 90%;
+        margin: auto;
+        padding: 20px;
+      }
+
+      .section-title {
+        font-size: 28px;
+        margin-top: 40px;
+        color: #ff6600;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      /* About Section and Image Section Shared Styles */
+      .about-section,
+      .image-container {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #fff5e6;
+        border-radius: 8px;
+        border: 1px solid #ff6600;
+      }
+
+      .about-text {
+        padding: 20px;
+        color: #333;
+      }
+
+      /* Image Styling */
+      .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 1000px; /* Set height to match layout */
+      }
+
+      .image-container img {
+        width: 100%; /* Ensure the image stretches to fit the container */
+        height: 100%; /* Ensure the image fills the container */
+        object-fit: cover; /* Ensures the image scales proportionally to cover the container */
+        border-radius: 8px; /* Match the rounded corners of the container */
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for a professional look */
+      }
+
+      /* Footer Styling */
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #ff6600;
+        color: white;
+        margin-top: 40px;
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 14px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!-- Unified Navigation Bar -->
+    <header>
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" style="color: #ff6600"
+              >OSU Hospitals - HMS</a
+            >
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="http://127.0.0.1:8000/home/">Home</a></li>
+            <li><a href="/Pat_test">Patients Test Details</a></li>
+            <li>
+              <a href="/Pat_Prescription">Patients Prescription Details</a>
+            </li>
+            <li><a href="/room_allocation">Room Allocation</a></li>
+            <li><a href="/generate_bill">Generate Bill</a></li>
+            <li><a href="/doctor/">Doctor Details</a></li>
+            <li><a href="/patient/">Patient Signup</a></li>
+            <li><a href="/assigned/">Assigned Patients</a></li>
+            <li><a href="/services/">Our Services</a></li>
+            <li><a href="/contact/">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Heading -->
+    <h1
+      style="
+        text-align: center;
+        font-family: Cambria;
+        color: #ff6600;
+        margin-top: 20px;
+      "
+    >
+      Hospital Management System
+    </h1>
+
+    <!-- Content Sections -->
+    <div class="container">
+      <!-- About Section -->
+      <div class="about-section">
+        <div class="about-text">
+          <h2 class="section-title">About OSU Hospital</h2>
+          <p>
+            OSU Hospital is a leading healthcare facility committed to providing
+            top-quality, compassionate, and personalized care to all our
+            patients. Equipped with advanced technology and a team of dedicated
+            professionals, OSU Hospital is at the forefront of medical care and
+            innovation. Our mission is to improve the quality of life in our
+            community by offering accessible and patient-centered healthcare.
+          </p>
+        </div>
+      </div>
+
+      <!-- Image Section -->
+      <div class="image-container">
+        <img src="{% static 'images/images.jpeg' %}" alt="Hospital image" />
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 OSU Hospital. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

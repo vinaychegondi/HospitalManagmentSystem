@@ -1,0 +1,14 @@
+{% include 'base.html' %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <h1>Patient id</h1>
+    {%for x in my_dic%}
+    <h1>{{x.my_text}}</h1>
+    <h1>{{x.my_output}}</h1>
+    {% endfor %}
+  </body>
+</html>

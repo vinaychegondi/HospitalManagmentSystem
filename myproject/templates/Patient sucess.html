@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Patient Added</title>
+    <style>
+      body {
+        background-color: #f9f3e7; /* Soft orange-white background */
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        color: black; /* Black color for title */
+        margin-top: 40px;
+      }
+      a {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #ff6600; /* Orange color for button */
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 4px;
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+      }
+      a:hover {
+        background-color: #e55b00;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Patient "{{ dict }}" Successfully Added</h1>
+    <h1>Thank You!!</h1>
+
+    <a href="/home/">Back To Home</a>
+  </body>
+</html>

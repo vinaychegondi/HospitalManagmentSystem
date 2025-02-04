@@ -1,0 +1,123 @@
+{% include 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prescription Form</title>
+    <style>
+      body {
+        background-color: #f9f3e7; /* Soft orange-white background */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      h1 {
+        color: black; /* Black color for title */
+        margin: 40px 0;
+      }
+      .form {
+        width: 300px;
+        padding: 20px;
+        border-radius: 8px;
+        background: #d8d6d6;
+        margin: 40px auto;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      input[type="number"],
+      select,
+      input[type="submit"] {
+        width: 100%;
+        border: 1px solid #333;
+        border-radius: 4px;
+        padding: 10px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        background-color: #ff6600; /* Orange button */
+        color: #ffffff;
+        cursor: pointer;
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+      }
+      input[type="submit"]:hover {
+        background-color: #e55b00;
+      }
+      table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      th {
+        background-color: #ff7f50; /* Coral color for headers */
+        color: white;
+        padding: 10px;
+      }
+      td {
+        border: 1px solid #dddddd;
+        padding: 8px;
+        text-align: left;
+      }
+      tr:nth-child(even) {
+        background-color: #dfeae9; /* Light blue for even rows */
+      }
+      tr:hover {
+        background-color: #dddddd; /* Light gray on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Prescription Form</h1>
+
+    <div class="form">
+      {% if error %}
+      <p style="color: red">{{ error }}</p>
+      {% endif %}
+
+      <form method="POST">
+        {% csrf_token %}
+        <label for="Patient_ID">Patient ID:</label>
+        <input type="number" name="Patient_ID" required />
+
+        <label for="Item_Number">Medicine:</label>
+        <select name="Item_Number" required>
+          <option value="" disabled selected>Select Medicine</option>
+          {% for medicine in medicines %}
+          <option value="{{ medicine.ItemID }}">
+            {{ medicine.Medicine_Name }}
+          </option>
+          {% endfor %}
+        </select>
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <h2 style="color: black; margin: 20px 0">Medicines Details</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ItemID</th>
+          <th>Medicine Name</th>
+          <th>Company Name</th>
+          <th>Dose</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in dic %}
+        <tr>
+          <td>{{ item.ItemID }}</td>
+          <td>{{ item.Medicine_Name }}</td>
+          <td>{{ item.Company_Name }}</td>
+          <td>{{ item.Dose }}</td>
+          <td>{{ item.Price }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

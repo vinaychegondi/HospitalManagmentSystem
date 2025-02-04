@@ -1,0 +1,82 @@
+{% include 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Assigned Patients</title>
+
+    <style>
+      body {
+        background-color: #f9f3e7; /* Soft orange-white background */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      .form-container {
+        width: 340px;
+        background-color: #3e3d3d;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      h1 {
+        color: black; /* Black color for main title */
+
+        margin: 40px;
+      }
+      .form-container h1 {
+        color: white; /* Light pink color for form title */
+        font-weight: normal;
+        margin-bottom: 20px;
+      }
+      input[type="number"],
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+      }
+      input[type="number"] {
+        background: none;
+        border: 1px solid #ffffff;
+        color: white;
+      }
+      input[type="submit"] {
+        background-color: #ff6600; /* Orange color for submit button */
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+      }
+      input[type="submit"]:hover {
+        background-color: #e55b00;
+      }
+    </style>
+  </head>
+  <body>
+    {{ msg }}
+    <h1>Check For Patients Assigned To Particular Doctor</h1>
+    <div class="form-container">
+      <form method="POST">
+        {% csrf_token %}
+
+        <h1>Assigned Patients</h1>
+        <input
+          type="number"
+          placeholder="Enter Doctor ID"
+          name="DoctorID"
+        /><br />
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>
